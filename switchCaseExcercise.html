@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>switchCaseEx</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <input type="number" id="month"/>
+                </td>
+                <td>
+                    <input type="button" value="Tính số ngày" onclick="showresult()"/>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p><label id="result"></label></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+<script>
+
+        function showresult() {
+            let month = document.getElementById('month').value;
+            let day;
+            let i = parseInt(month);
+            switch (i) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    day = 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    day = 30;
+                    break;
+                case 2:
+                    day = '28 hoặc 29'
+                    break;
+                default:
+                    alert('bạn đã nhập sai tháng');
+            }
+        document.getElementById('result').innerHTML = 'tháng ' + document.getElementById('month').value + ' có ' + day + 'ngày';
+
+        }
+</script>
+</body>
+</html>
